@@ -72,9 +72,9 @@ docker-compose.ymlのファイルを開く
 
 http://192.168.33.11 で表示確認
 
-envファイルの修正（example.envをコピーして作成）
+- envファイルの修正（example.envをコピーして作成）
 
-composer install
+- composer install 実行
 
 `docker-compose exec apache-php bash`
 
