@@ -74,4 +74,12 @@ http://192.168.33.11 で表示確認
 
 envファイルの修正（example.envをコピーして作成）
 
+composer install
+
+`docker-compose exec apache-php bash`
+
+`composer install`
+
+*compose updateは絶対しない（Versionが変わってしまうため）
+
 環境構築終了
