@@ -1,4 +1,4 @@
-# dockerで Apatch, Laravel, MySQL8.0, Redis, phpMyAdmin の環境を構築するファイル群です
+# dockerで Apache, Laravel, MySQL8.0, Redis, phpMyAdmin の環境を構築するファイル群です
 
 - ます、以下の環境構築が終わらせる
 
