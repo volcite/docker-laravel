@@ -40,6 +40,10 @@ https://github.com/volcite/docker-on-vagrant
 
 `composer create-project --prefer-dist laravel/laravel lara-d "6.*"`
 
+- php8.0にパスを通す
+
+`ln -sf /usr/bin/php80 /usr/bin/php`
+
 `exit`
 
 - コンテナ停止
