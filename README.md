@@ -64,7 +64,7 @@ docker-compose.ymlのファイルを開く
 
 - コンテナ起動
 
-docker-compose up -d
+`docker-compose up -d`
 
 http://192.168.33.11で表示確認
 
