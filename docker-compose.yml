@@ -1,0 +1,49 @@
+version: '3'
+
+services:
+  apache-php:
+    build:
+      context: ./docker/apache-php
+    ports: 
+      - 80:80
+    privileged: true
+    depends_on:
+      - db
+    volumes:
+      - "./src:/var/www/html"
+      - "./docker/apache-php/apache.conf:/etc/httpd/conf/httpd.conf"
+
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: laravel
+      TZ: 'Asia/Tokyo'
+    command: 
+      --innodb-use-native-aio=0
+      --default-authentication-plugin=mysql_native_password
+    volumes:
+      - ./docker/db/data:/var/lib/mysql
+    ports:
+      - 3306:3306
+
+  cache:
+    image: redis:5.0.4
+    ports:
+      - 6379:6379
+    volumes:
+      - ./docker/redis:/datadocker ps
+
+  pma:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=db
+      - PMA_USER=root
+      - PMA_PASSWORD=password
+    ports:
+      - 8080:80
+    depends_on:
+      - db
+    volumes:
+      - ./docker/phpmyadmin/sessions:/sessions
