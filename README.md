@@ -2,7 +2,7 @@
 
 - ます、以下の環境構築が終わらせる
 
-`https://github.com/volcite/docker-on-vagrant`
+https://github.com/volcite/docker-on-vagrant
 
 - Docksフォルダの中で環境構築のファイル群をcloneする
 
@@ -66,7 +66,7 @@ docker-compose.ymlのファイルを開く
 
 `docker-compose up -d`
 
-http://192.168.33.11で表示確認
+http://192.168.33.11 で表示確認
 
 envファイルの修正（example.envをコピーして作成）
 
