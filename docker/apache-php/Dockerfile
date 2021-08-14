@@ -16,6 +16,6 @@ RUN php80 composer-setup.php --install-dir=/usr/bin --filename=composer
 
 RUN composer self-update --2
 
-CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
+ENTRYPOINT ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 
 WORKDIR /var/www/html
