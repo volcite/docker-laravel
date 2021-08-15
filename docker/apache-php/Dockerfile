@@ -14,6 +14,8 @@ RUN yum -y install zip unzip git
 RUN php80 -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 RUN php80 composer-setup.php --install-dir=/usr/bin --filename=composer
 
+COPY my-php.ini /etc/opt/remi/php80/php.ini
+
 RUN composer self-update --2
 
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
