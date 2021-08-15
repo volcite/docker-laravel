@@ -15,6 +15,9 @@ RUN php80 -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 RUN php80 composer-setup.php --install-dir=/usr/bin --filename=composer
 
 COPY my-php.ini /etc/opt/remi/php80/php.ini
+RUN touch /var/log/php_error.log
+RUN chown apache:apache /var/log/php_error.log
+RUN chcon -t httpd_log_t /var/log/php_error.log
 
 RUN composer self-update --2
 
