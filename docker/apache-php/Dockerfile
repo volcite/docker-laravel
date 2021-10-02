@@ -16,8 +16,6 @@ RUN php80 composer-setup.php --install-dir=/usr/bin --filename=composer
 
 COPY my-php.ini /etc/opt/remi/php80/php.ini
 
-RUN composer self-update --2
-
 ENTRYPOINT ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 
 WORKDIR /var/www/html
