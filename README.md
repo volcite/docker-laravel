@@ -4,7 +4,9 @@
 
 `cd フォルダ名`
 
-`sudo systemctl restart docker`
+`git clone https://github.com/volcite/system-api.git`
+
+`git clone -b feature/コンテンツ管理アプリ用 https://github.com/volcite/docker-laravel.git`
 
 - コンテナイメージ作成
 
