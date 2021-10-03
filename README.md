@@ -28,7 +28,7 @@
 
 `composer install`
 
-- envファイルの修正（example.envをコピーして作成）
+- envファイルの作成（example.envをコピーして作成）
 
 *compose updateは絶対しない（Versionが変わってしまうため）
 
