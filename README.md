@@ -1,10 +1,8 @@
 # コンテンツ管理アプリ用環境構築ファイル群
 
-好きな名前でフォルダ作成する
-
-`cd フォルダ名`
-
 ```
+mkdir contentManageSystem
+cd contentManageSystem
 git clone https://github.com/volcite/system-api.git
 git clone https://github.com/volcite/front-manage.git
 git clone https://github.com/volcite/front-content.git
