@@ -29,3 +29,9 @@
 - envファイルの修正（example.envをコピーして作成）
 
 *compose updateは絶対しない（Versionが変わってしまうため）
+
+- hostsファイルの修正
+
+127.0.0.1 manage.sample
+
+127.0.0.1 content.sample
