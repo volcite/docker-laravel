@@ -11,17 +11,13 @@ git clone https://github.com/volcite/front-content.git
 git clone -b feature/コンテンツ管理アプリ用 https://github.com/volcite/docker-laravel.git
 ```
 
-## コンテナイメージ作成
+## コンテナイメージ作成＆起動
 
-`docker-compose build`
-
-## コンテナ起動
-
-`docker-compose up -d`
-
-## コンテナに入る
-
-`docker-compose exec apache-php bash`
+```
+docker-compose build
+docker-compose up -d
+docker-compose exec apache-php bash
+```
 
 ### php8.0にパスを通す
 
