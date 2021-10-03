@@ -29,10 +29,9 @@ ln -sf /usr/bin/php80 /usr/bin/php
 ```
 composer install
 ```
+*compose updateは絶対しない（Versionが変わってしまうため）
 
 ### envファイルの作成（example.envをコピーして作成）
-
-*compose updateは絶対しない（Versionが変わってしまうため）
 
 ### DBにデータ挿入
 
