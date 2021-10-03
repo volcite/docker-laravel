@@ -35,6 +35,13 @@ git clone -b feature/コンテンツ管理アプリ用 https://github.com/volcit
 
 *compose updateは絶対しない（Versionが変わってしまうため）
 
+### DBにデータ挿入
+
+```
+php artisan migrate
+php artisan db:seed
+```
+
 ## hostsファイルに以下を追記
 
 127.0.0.1 manage.sample
