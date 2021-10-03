@@ -52,8 +52,7 @@ php artisan db:seed
 ## フロント側構築（yarnはインストール済みを想定)
 
 ```
-yarn -v 
-これでバージョンが表示されて入ればOK
+yarn -v （これでバージョンが表示されて入ればOK）
 cd front-manage
 yarn install
 yarn dev
