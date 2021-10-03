@@ -45,10 +45,11 @@ php artisan db:seed
 127.0.0.1 content.sample
 ```
 
-## フロント側構築（yarnはインストール済みを想定)
+## フロント側構築（yarnはインストール済みを想定、別ターミナルで実行)
 
 ```
 yarn -v （これでバージョンが表示されて入ればOK）
+cd contentManageSystem
 cd front-manage
 yarn install
 yarn dev
