@@ -20,12 +20,15 @@ docker-compose exec apache-php bash
 ```
 
 ### php8.0にパスを通す
-
-`ln -sf /usr/bin/php80 /usr/bin/php`
+```
+ln -sf /usr/bin/php80 /usr/bin/php
+```
 
 ### composer install 実行
 
-`composer install`
+```
+composer install
+```
 
 ### envファイルの作成（example.envをコピーして作成）
 
