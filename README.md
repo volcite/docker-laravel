@@ -44,6 +44,25 @@ php artisan db:seed
 
 ## hostsファイルに以下を追記
 
+```
 127.0.0.1 manage.sample
-
 127.0.0.1 content.sample
+```
+
+## フロント側構築（yarnはインストール済みを想定)
+
+```
+yarn -v 
+これでバージョンが表示されて入ればOK
+cd front-manage
+yarn install
+yarn dev
+```
+
+front-contentも同様に
+
+## 初期ログインユーザ
+- ユーザ：user@user.com
+- パスワード：p@ssw0rd
+
+
