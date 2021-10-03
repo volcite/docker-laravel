@@ -58,7 +58,7 @@ yarn dev
 
 front-contentも同様に
 
-## 初期ログインユーザ
+## 初期ログインユーザ（シーダで挿入されるユーザ）
 - ユーザ：user@user.com
 - パスワード：p@ssw0rd
 
