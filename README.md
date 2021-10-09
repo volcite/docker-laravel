@@ -1,5 +1,8 @@
 # コンテンツ管理アプリ用環境構築ファイル群
 
+## WindowsHomeでHyper-Vを有効にする方法
+https://zeropasoakita.livedoor.blog/archives/37449396.html
+
 ```
 mkdir contentManageSystem
 cd contentManageSystem
