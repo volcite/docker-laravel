@@ -12,7 +12,6 @@ services:
     volumes:
       - "../system-api:/var/www/html"
       - "./docker/apache-php/apache.conf:/etc/httpd/conf/httpd.conf"
-    command: "ln -sf /usr/bin/php80 /usr/bin/php"
 
   db:
     image: mysql:8.0
