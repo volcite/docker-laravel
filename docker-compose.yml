@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-  system-api:
+  content-api:
     build:
       context: ./docker/apache-php
     ports:
@@ -10,10 +10,10 @@ services:
     depends_on:
       - db
     volumes:
-      - "../system-api:/var/www/html"
+      - "../content-api:/var/www/html"
       - "./docker/apache-php/apache.conf:/etc/httpd/conf/httpd.conf"
 
-  admin-api:
+  manage-api:
     build:
       context: ./docker/apache-php
     ports:
@@ -22,7 +22,7 @@ services:
     depends_on:
       - db
     volumes:
-      - "../admin-api:/var/www/html"
+      - "../manage-api:/var/www/html"
       - "./docker/apache-php/apache.conf:/etc/httpd/conf/httpd.conf"
 
   db:
