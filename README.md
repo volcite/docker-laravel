@@ -6,7 +6,8 @@ https://zeropasoakita.livedoor.blog/archives/37449396.html
 ```
 mkdir contentManageSystem
 cd contentManageSystem
-git clone https://github.com/volcite/system-api.git
+git clone https://github.com/volcite/content-api.git
+git clone https://github.com/volcite/manage-api.git
 git clone https://github.com/volcite/front-manage.git
 git clone https://github.com/volcite/front-content.git
 git clone -b feature/コンテンツ管理アプリ用 https://github.com/volcite/docker-laravel.git
