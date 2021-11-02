@@ -41,13 +41,6 @@ php artisan migrate
 php artisan db:seed
 ```
 
-## hostsファイルに以下を追記
-
-```
-127.0.0.1 manage.sample
-127.0.0.1 content.sample
-```
-
 ## フロント側構築（yarnはインストール済みを想定、別ターミナルで実行)
 
 ```
