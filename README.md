@@ -1,85 +1,61 @@
-# dockerで Apache, PHP8.0, Laravel6, MySQL8.0, Redis, phpMyAdmin の環境を構築するファイル群です
+# コンテンツ管理アプリ用環境構築ファイル群
 
-- ます、以下の環境構築が終わらせる
+## WindowsHomeでHyper-Vを有効にする方法
+https://zeropasoakita.livedoor.blog/archives/37449396.html
 
-https://github.com/volcite/docker-on-vagrant
+```
+mkdir contentManageSystem
+cd contentManageSystem
+git clone https://github.com/volcite/content-api.git
+git clone https://github.com/volcite/manage-api.git
+git clone https://github.com/volcite/front-manage.git
+git clone https://github.com/volcite/front-content.git
+git clone -b feature/コンテンツ管理アプリ用 https://github.com/volcite/docker-laravel.git
+```
 
-- Docksフォルダの中で環境構築のファイル群をcloneする
+## コンテナイメージ作成＆起動
 
-`git clone https://github.com/volcite/docker-laravel.git プロジェクト名`
+```
+docker-compose build
+docker-compose up -d
+docker-compose exec apache-php bash
+```
 
-- 仮想マシンに接続する
+### php8.0にパスを通す
+```
+ln -sf /usr/bin/php80 /usr/bin/php
+```
 
-`cd ..`
+### composer install 実行
 
-`vagrant ssh`
-
-- dockerを起動させる
-
-`cd docks`
-
-`cd プロジェクト名`
-
-`sudo systemctl restart docker`
-
-- コンテナイメージ作成
-
-`docker-compose build`
-
-- コンテナ起動
-
-`docker-compose up -d`
-
-- コンテナに入る
-
-`docker-compose exec apache-php bash`
-
-- Laravelインストール
-
-`composer global require laravel/installer`
-
-`composer create-project --prefer-dist laravel/laravel lara-d "6.*"`
-
-- php8.0にパスを通す
-
-`ln -sf /usr/bin/php80 /usr/bin/php`
-
-`exit`
-
-- コンテナ停止
-
-`docker-compose down`
-
-- apatch.conf修正
-
-`docker/apache-php/apache.conf`のファイルを開く
-
-119行目、131行目を変更
-
-修正前 `var/www/html/` →　修正後 `var/www/html/public`
-
-- docker-compose.yml修正
-
-docker-compose.ymlのファイルを開く
-
- 13行目を変更
-
-修正前 `"./src:/var/www/html"` → 修正後 `./src/lara-d:/var/www/html`
-
-- コンテナ起動
-
-`docker-compose up -d`
-
-http://192.168.33.11 で表示確認
-
-- envファイルの修正（example.envをコピーして作成）
-
-- composer install 実行
-
-`docker-compose exec apache-php bash`
-
-`composer install`
-
+```
+composer install
+```
 *compose updateは絶対しない（Versionが変わってしまうため）
 
-環境構築終了
+### envファイルの作成（example.envをコピーして作成）
+
+### DBにデータ挿入
+
+```
+php artisan migrate
+php artisan db:seed
+```
+
+## フロント側構築（yarnはインストール済みを想定、別ターミナルで実行)
+
+```
+yarn -v （これでバージョンが表示されて入ればOK）
+cd contentManageSystem
+cd front-manage
+yarn install
+yarn dev
+```
+
+front-contentも同様に
+
+## 初期ログインユーザ（シーダで挿入されるユーザ）
+- ユーザ：user@user.com
+- パスワード：p@ssw0rd
+
+

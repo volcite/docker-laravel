@@ -1,16 +1,28 @@
-version: '3'
+version: "3"
 
 services:
-  apache-php:
+  content-api:
     build:
       context: ./docker/apache-php
-    ports: 
+    ports:
       - 80:80
     privileged: true
     depends_on:
       - db
     volumes:
-      - "./src:/var/www/html"
+      - "../content-api:/var/www/html"
+      - "./docker/apache-php/apache.conf:/etc/httpd/conf/httpd.conf"
+
+  manage-api:
+    build:
+      context: ./docker/apache-php
+    ports:
+      - 81:80
+    privileged: true
+    depends_on:
+      - db
+    volumes:
+      - "../manage-api:/var/www/html"
       - "./docker/apache-php/apache.conf:/etc/httpd/conf/httpd.conf"
 
   db:
@@ -18,9 +30,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: laravel
-      TZ: 'Asia/Tokyo'
-    command: 
-      --innodb-use-native-aio=0
+      TZ: "Asia/Tokyo"
+    command: --innodb-use-native-aio=0
       --default-authentication-plugin=mysql_native_password
     volumes:
       - ./docker/db/data:/var/lib/mysql
