@@ -18,13 +18,15 @@ git clone -b feature/コンテンツ管理アプリ用 https://github.com/volcit
 ```
 docker-compose build
 docker-compose up -d
-docker-compose exec apache-php bash
+docker-compose exec content-api bash 
+# もしくは
+docker-compose exec manage-api bash 
 ```
 
 ### php8.0にパスを通す
-```
-ln -sf /usr/bin/php80 /usr/bin/php
-```
+* Dockerfileに追記
+
+~~ln -sf /usr/bin/php80 /usr/bin/php~~
 
 ### composer install 実行
 
